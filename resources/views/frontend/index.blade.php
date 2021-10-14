@@ -1,6 +1,29 @@
 @extends('frontend.layouts.app')
 @section('content')
 
+	<!-- New Member Section -->
+	@if(get_setting('show_new_member_section') == 'on')
+		<section class="pt-9 pb-6 bg-white d-sm-none">
+	      <div class="container">
+	          <div class="row">
+	              <div class="col-lg-10 col-xl-8 col-xxl-6 mx-auto">
+	                  <div class="text-center section-title mb-5">
+	                      <h2 class="fw-600 mb-3 text-dark">{{ get_setting('new_member_section_title') }}</h2>
+	                      <p class="fw-400 fs-16 opacity-60">{{ get_setting('new_member_section_sub_title') }}</p>
+	                  </div>
+	              </div>
+	          </div>
+	          <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="5" data-xl-items="4" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="1" data-dots='true' data-infinite='true'>
+	              @foreach ($new_members as $key => $member)
+	                  <div class="carousel-box">
+	                      @include('frontend.inc.member_box_1',['member'=>$member])
+	                  </div>
+	              @endforeach
+	          </div>
+	      </div>
+	  </section>
+	@endif
+	
 	<!-- Homepage Slider Section -->
 	@if( get_setting('show_homepage_slider') == 'on' && get_setting('home_slider_images') != null )
 		<section class="position-relative overflow-hidden min-vh-100 d-flex home-slider-area">
@@ -384,7 +407,7 @@
 
 	<!-- New Member Section -->
 	@if(get_setting('show_new_member_section') == 'on')
-		<section class="py-9 bg-white">
+		<section class="py-9 bg-white d-none d-sm-block">
 	      <div class="container">
 	          <div class="row">
 	              <div class="col-lg-10 col-xl-8 col-xxl-6 mx-auto">
