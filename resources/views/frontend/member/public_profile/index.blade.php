@@ -1064,11 +1064,7 @@
                                                         </tr>
                                                        
                                                         <tr>
-                                                            <th class="py-1">{{translate('Personal Value')}}</th>
-                                                            <td class="py-1">{{ !empty($user->spiritual_backgrounds->personal_value) ? $user->spiritual_backgrounds->personal_value : "" }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="py-1">{{translate('Community Value')}}</th>
+                                                            <th class="py-1">{{translate('Community Status')}}</th>
                                                             <td class="py-1">{{ !empty($user->spiritual_backgrounds->community_value) ? $user->spiritual_backgrounds->community_value : "" }}</td>
                                                         </tr>
                                                     </tbody>
@@ -1357,15 +1353,6 @@
                                       <td>{{ !empty($user->partner_expectations->religion->name) ? $user->partner_expectations->religion->name : "" }}
                                       </td>
 
-                                      <th>{{translate('Caste')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->caste->name) ? $user->partner_expectations->caste->name : "" }}
-                                      </td>
-                                  </tr>
-
-                                  <tr>
-                                      <th>{{translate('Sub Caste')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->sub_caste->name) ? $user->partner_expectations->sub_caste->name : "" }}
-                                      </td>
 
                                       <th>{{translate('Language')}}</th>
                                       <td>{{ !empty($user->partner_expectations->language->name) ? $user->partner_expectations->language->name : "" }}
@@ -1383,31 +1370,16 @@
                                   </tr>
 
                                   <tr>
-                                      <th>{{translate('Smoking Acceptable')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->smoking_acceptable) ? $user->partner_expectations->smoking_acceptable : "" }}
-                                      </td>
-
-                                      <th>{{translate('Drinking Acceptable')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->drinking_acceptable) ? $user->partner_expectations->drinking_acceptable : "" }}
-                                      </td>
-                                  </tr>
-                                  <tr>
                                       <th>{{translate('Diet')}}</th>
                                       <td>{{ !empty($user->partner_expectations->diet) ? $user->partner_expectations->diet : "" }}
                                       </td>
+                                      
 
-                                      <th>{{translate('Body Type')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->body_type) ? $user->partner_expectations->body_type : "" }}
+                                      <th>{{translate('complexion')}}</th>
+                                      <td>{{ !empty($user->partner_expectations->complexion) ? $user->partner_expectations->complexion : "" }}
                                       </td>
                                   </tr>
-                                  <tr>
-                                      <th>{{translate('Personal Value')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->personal_value) ? $user->partner_expectations->personal_value : "" }}
-                                      </td>
-
-                                      <th>{{translate('Manglik')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->manglik) ? $user->partner_expectations->manglik : "" }}
-                                      </td>
+                                
                                   </tr>
                                   <tr>
                                       <th>{{translate('Preferred Country')}}</th>
@@ -1421,7 +1393,7 @@
                                           @endphp
                                       </td>
 
-                                      <th>{{translate('preferred_state_id')}}</th>
+                                      <th>{{translate('preferred_state')}}</th>
                                       <td>
                                           @php
                                           $preferred_state = !empty($user->partner_expectations->preferred_state_id) ?
@@ -1432,15 +1404,7 @@
                                           @endphp
                                       </td>
                                   </tr>
-                                  <tr>
-                                      <th>{{translate('Family Value')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->family_value->name) ? $user->partner_expectations->family_value->name : "" }}
-                                      </td>
-
-                                      <th>{{translate('complexion')}}</th>
-                                      <td>{{ !empty($user->partner_expectations->complexion) ? $user->partner_expectations->complexion : "" }}
-                                      </td>
-                                  </tr>
+                                  
                               </table>
                         </div>
                     </div>
