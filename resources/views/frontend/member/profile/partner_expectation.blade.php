@@ -209,21 +209,35 @@
                     @enderror
                 </div>
             </div>
+
+
 --}}
-            <div class="form-group row">
+
+<div class="form-group row">
                 <div class="col-md-6">
-                    <label for="partner_diet">{{translate('Dieting Acceptable')}}</label>
-                    @php $partner_dieting_acceptable = !empty($member->partner_expectations->diet) ? $member->partner_expectations->diet : ""; @endphp
-                    <select class="form-control aiz-selectpicker" name="partner_diet" >
-                        <option value="" disabled hidden @if($partner_dieting_acceptable ==  '') selected @endif >{{translate('Select Yes/No')}}</option>
-                        <option value="yes" @if($partner_dieting_acceptable ==  'yes') selected @endif >{{translate('Yes')}}</option>
-                        <option value="no" @if($partner_dieting_acceptable ==  'no') selected @endif >{{translate('No')}}</option>
-                        <option value="dose_not_matter" @if($partner_dieting_acceptable ==  'dose_not_matter') selected @endif >{{translate('Dose not matter')}}</option>
+                    <label for="partner_country_id">{{translate('Preferred Country')}}</label>
+                    <select class="form-control aiz-selectpicker" name="partner_country_id" id="partner_country_id" data-live-search="true" >
+                        <option value="" disabled hidden selected>{{translate('Select One')}}</option>
+                        @foreach ($countries as $country)
+                            <option value="{{$country->id}}" @if($country->id == $partner_country_id) selected @endif>{{$country->name}}</option>
+                        @endforeach
                     </select>
-                    @error('partner_diet')
+                    @error('partner_country_id')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
                 </div>
+                <div class="col-md-6">
+                    <label for="partner_state_id">{{translate('Preferred State')}}</label>
+                    <select class="form-control aiz-selectpicker" name="partner_state_id" id="partner_state_id" data-live-search="true">
+
+                    </select>
+                    @error('partner_state_id')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group row">
+               
                 <div class="col-md-6">
                     <label for="pertner_complexion">{{translate('Complexion')}}</label>
                 
@@ -277,29 +291,7 @@
                 </div> 
             </div>
             --}}
-            <div class="form-group row">
-                <div class="col-md-6">
-                    <label for="partner_country_id">{{translate('Preferred Country')}}</label>
-                    <select class="form-control aiz-selectpicker" name="partner_country_id" id="partner_country_id" data-live-search="true" >
-                        <option value="" disabled hidden selected>{{translate('Select One')}}</option>
-                        @foreach ($countries as $country)
-                            <option value="{{$country->id}}" @if($country->id == $partner_country_id) selected @endif>{{$country->name}}</option>
-                        @endforeach
-                    </select>
-                    @error('partner_country_id')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-                <div class="col-md-6">
-                    <label for="partner_state_id">{{translate('Preferred State')}}</label>
-                    <select class="form-control aiz-selectpicker" name="partner_state_id" id="partner_state_id" data-live-search="true">
-
-                    </select>
-                    @error('partner_state_id')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-            </div>
+            
 
           
                {{-- <div class="col-md-6">
