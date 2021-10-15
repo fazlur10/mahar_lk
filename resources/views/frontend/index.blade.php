@@ -13,7 +13,7 @@
 	                  </div>
 	              </div>
 	          </div>
-	          <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="5" data-xl-items="4" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="1" data-dots='true' data-infinite='true'>
+			  <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="1" data-xl-items="1" data-lg-items="1"  data-md-items="1" data-sm-items="1" data-xs-items="1" data-dots='true' data-infinite='true'>
 	              @foreach ($new_members as $key => $member)
 	                  <div class="carousel-box">
 	                      @include('frontend.inc.member_box_1',['member'=>$member])
@@ -417,9 +417,9 @@
 	                  </div>
 	              </div>
 	          </div>
-	          <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="5" data-xl-items="4" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="1" data-dots='true' data-infinite='true'>
+	          <div class="aiz-carousel gutters-10 half-outside-arrow" data-items="1" data-xl-items="1" data-lg-items="1"  data-md-items="1" data-sm-items="1" data-xs-items="1" data-dots='true' data-infinite='true'>
 	              @foreach ($new_members as $key => $member)
-	                  <div class="carousel-box">
+	                  <div class="">
 	                      @include('frontend.inc.member_box_1',['member'=>$member])
 	                  </div>
 	              @endforeach
