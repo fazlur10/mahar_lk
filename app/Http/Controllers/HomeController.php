@@ -166,6 +166,7 @@ class HomeController extends Controller
 
     public function member_listing(Request $request)
     {
+        $gender       = ($request->gender != null) ? $request->gender : null;
         $age_from       = ($request->age_from != null) ? $request->age_from : null;
         $age_to         = ($request->age_to != null) ? $request->age_to : null;
         $member_code    = ($request->member_code != null) ? $request->member_code : null;
@@ -189,9 +190,7 @@ class HomeController extends Controller
                         ->where('blocked', 0)
                         ->where('deactivated',0);
 
-        // Gender Check
-        $user_ids = Member::where('gender', '!=', Auth::user()->member->gender)->pluck('user_id')->toArray();
-        $users = $users->WhereIn('id', $user_ids);
+        
 
         // Ignored member and ignored by member check
         $users = $users->WhereNotIn("id", function ($query){
@@ -218,6 +217,11 @@ class HomeController extends Controller
         // Member Approved Check
         if(get_setting('member_approval_by_admin') == 1){
             $users = $users->where('approved',1);
+        }
+        // Sort By gender
+        if(!empty($gender)){
+            $user_ids = Member::where('gender', '!=', $gender)->pluck('user_id')->toArray();
+            $users = $users->WhereIn('id', $user_ids);
         }
 
         // Sort By age
@@ -382,7 +386,7 @@ class HomeController extends Controller
             }
         }
         $users = $users->paginate(10);
-        return view('frontend.member.member_listing.index', compact('users','age_from','age_to','member_code','matital_status','religion_id','caste_id','sub_caste_id','mother_tongue_id','profession','country_id','state_id','city_id','min_height','max_height','member_type'));
+        return view('frontend.member.member_listing.index', compact('gender','users','age_from','age_to','member_code','matital_status','religion_id','caste_id','sub_caste_id','mother_tongue_id','profession','country_id','state_id','city_id','min_height','max_height','member_type'));
     }
 
     public function profile_edit(Request $request){
