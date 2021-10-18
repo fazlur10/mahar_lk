@@ -14,14 +14,14 @@
                         <div class="d-inline ml-3">
                             <div class="form-group mb-3">
 							<input type="radio" id="female" name="gender" value="1" @if($gender == 1) checked @endif >
-                            <label for="female" class="form-label"><img src="{{ static_asset('assets/img/female.jpg') }}" class="img-fit mw-100 size-50px size-md-50px rounded-circle md-rounded-0"></label>
+                            <label for="female" class="form-label"><img src="{{ static_asset('assets/img/female.png') }}" class="img-fit mw-100 size-50px size-md-50px rounded-circle md-rounded-0"></label>
 
                             </div>
                         </div>
                         <div class="d-inline ml-5">
                             <div class="form-group mb-3">
                                 <input type="radio" id="male" name="gender" value="2" @if($gender == 2) checked @endif >
-                         <label for="male" class="form-label"><img src="{{ static_asset('assets/img/male.jpg') }}" class="img-fit mw-100 size-50px size-md-50px rounded-circle md-rounded-0"></label>
+                         <label for="male" class="form-label"><img src="{{ static_asset('assets/img/male.png') }}" class="img-fit mw-100 size-50px size-md-50px rounded-circle md-rounded-0"></label>
 
                           </div>
                         </div>
