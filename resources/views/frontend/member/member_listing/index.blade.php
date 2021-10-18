@@ -67,10 +67,10 @@
                                             <table class="w-100 opacity-70 mb-2 fs-12">
                                                 <tr>
                                                     <td class="py-1 w-25">
-                                                        <span>{{ translate('Age') }}</span>
+                                                        <span><i class="las la-birthday-cake fs-20"></i></span>
                                                     </td>
                                                     <td class="py-1 w-25 fw-400">{{ \Carbon\Carbon::parse($user->member->birthday)->age }}</td>
-                                                    <td class="py-1 w-25"><span>{{ translate('Height') }}</span></td>
+                                                    <td class="py-1 w-25"><span><i class="las la-ruler-vertical fs-20"></i></span></td>
                                                     <td class="py-1 w-25 fw-400">
                                                         @if(!empty( $user->physical_attributes->height))
                                                             {{ $user->physical_attributes->height }}
@@ -78,13 +78,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="py-1"><span>{{ translate('Weight') }}</span></td>
+                                                    <td class="py-1"><span><i class="las la-weight fs-20"></i></span></td>
                                                     <td class="py-1 fw-400">
                                                         @if(!empty($user->physical_attributes->weight))
                                                             {{ $user->physical_attributes->weight }}
                                                         @endif
                                                     </td>
-                                                    <td class="py-1"><span>{{ translate('City') }}</span></td>
+                                                    <td class="py-1"><span><i class="las la-city fs-20"></i></span></td>
                                                     <td class="py-1 fw-400">
                                                         @php
                                                             $present_address    = \App\Models\Address::where('type','present')->where('user_id', $user->id)->first();
@@ -95,13 +95,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="py-1"><span>{{ translate('Marital Status') }}</span></td>
+                                                    <td class="py-1"><span><i class="las la-ring fs-20"></i></span></td>
                                                     <td class="py-1 fw-400">
                                                         @if($user->member->marital_status_id != null)
                                                             {{ $user->member->marital_status->name }}
                                                         @endif
                                                     </td>
-                                                    <td class="py-1"><span>{{ translate('Profession') }}</span></td>
+                                                    <td class="py-1"><span><i class="las la-briefcase fs-20"></i></span></td>
                                                     <td class="py-1 fw-400">
                                                          @php 
 														  $careers = \App\Models\Career::where('user_id',$user->id)->get();
@@ -114,7 +114,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-												<td class="py-1"><span>{{ translate('Educations') }}</span></td>
+												<td class="py-1"><span><i class="las la-school fs-20"></i></span></td>
                                                     <td class="py-1 fw-400">
                                                         @php $educations = \App\Models\Education::where('user_id',$user->id)->get();
                                             @endphp
